@@ -40,3 +40,25 @@ land here as queue items get deleted.
   explicit `alphabet` so the counterfactual variants work. `scripts/run.py`
   summary, 12 unittest tests (all pass), and `.github/workflows/ci.yml` (ubuntu +
   windows × py3.9/3.12).
+
+## 2026-06-11 — H2–H4 + preliminary findings: Copycat 11/15 vs Gemma 3 12B 5/15
+
+- **H2 · Copycat harness** (`src/copycat_vs_llms/copycat_solver.py`): vendored the
+  `jalanb/co.py.cat` port as a git submodule under `src/vendor/copycat`; adapter
+  position-maps each item's alphabet onto a–z so classic Copycat (hardwired to
+  a–z) runs on the permuted / Greek / digit variants, then maps answers back.
+  Returns the full answer distribution + avg temperature.
+- **H3 · Gemma runner** (`llm_solver.py`): zero-dep `urllib` call to local Ollama
+  (`gemma3:12b`); prompt states the item's alphabet (so the LLM is handed the same
+  ordered-list relation Copycat gets); robust answer parser.
+- **H4 · scoring** (`scoring.py` + `scripts/run.py --head-to-head`): per-class
+  boundary table, writes `results/scores.json`.
+- **Preliminary result (N=15, single run): Copycat 11/15, Gemma 3 12B 5/15.**
+  Copycat wins where exact relational manipulation is needed (standard 3/3 vs 1/3;
+  predecessor 2/2 vs 0/2; permuted 2/2 vs 1/2). But the boundary is complementary,
+  not a sweep: *both* fail second_successor (0/2 each — Copycat's rule space can't
+  express "skip one"), and length-generalization splits. Written up in
+  `FINDINGS.md` (heavily caveated) + the `docs/` report.
+- **Tests:** +10 CI-safe unit tests for the pure glue (alphabet mapping, LLM
+  answer parsing); 22 total pass. Live paths (running Copycat / calling Ollama)
+  stay out of CI by design.

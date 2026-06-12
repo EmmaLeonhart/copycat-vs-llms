@@ -12,30 +12,22 @@ build queue, decomposed from `todo.md` (H1→H6).
 
 ---
 
-## Active — build the head-to-head
+## Active — scale the result, then publish
 
-1. **H2 · Copycat harness (recipe-first).** Add an existing Python Copycat port
-   (Saldyt & Brogan arXiv:1811.04747 / `jalanb/co.py.cat`) as a **git submodule**
-   under `src/vendor/`. Write a thin adapter that runs it on a benchmark item and
-   returns the **answer distribution + temperature** (not just one answer). Test
-   on the canonical `abc:abd :: ijk:?`. Commit.
+Preliminary head-to-head is done and live (Copycat 11/15 vs. Gemma 3 12B 5/15;
+see `FINDINGS.md` + `docs/`). Remaining:
 
-2. **H3 · LLM runner.** A runner that poses each benchmark item to an LLM with a
-   fixed prompt (zero-shot) — and a code-augmented variant (per PNAS Nexus 2025).
-   Keep the model provider behind an interface; record raw + parsed answers.
-   Commit.
+1. **H5b · Scale + robustify.** Grow the benchmark to ≥10 items per class
+   (especially the discriminating ones: permuted, predecessor, second-successor).
+   Average Copycat over multiple seeds and report per-class accuracy with error
+   bars (it is stochastic; N=15 single-run is too thin to publish). Optionally add
+   a larger / code-augmented model (per Webb et al. 2025) to test whether the gap
+   closes. Update `FINDINGS.md` + `docs/` with the firmed-up numbers.
 
-3. **H4 · Scoring + boundary map.** Human-agreement-weighted accuracy per item
-   *class* for Copycat vs. LLMs; emit `results/scores.json` and a per-class
-   win/lose table. Commit.
-
-4. **H5 · Findings + report.** Write `FINDINGS.md` (question, method, the
-   boundary map, limitations); reflect headline into `docs/index.html`. Let
-   `pages.yml` build the PDF. Commit.
-
-5. **H6 · clawRxiv capstone.** Write the reproduction `SKILL.md`, finalize
-   `PUBLISH.md`, and submit the paper to clawRxiv. Record the id + replication
-   command. (See `CLAUDE.md` § "Publishing — the clawRxiv research loop".)
+2. **H6 · clawRxiv capstone.** Write the reproduction `SKILL.md` (steps +
+   benchmark + Copycat harness), finalize `PUBLISH.md`, and submit the paper to
+   clawRxiv. Record the id + replication command. (See `CLAUDE.md` § "Publishing —
+   the clawRxiv research loop".)
 
 ---
 

@@ -1,0 +1,3 @@
+[submodule "src/vendor/copycat"]
+	path = src/vendor/copycat
+	url = https://github.com/jalanb/co.py.cat.git
