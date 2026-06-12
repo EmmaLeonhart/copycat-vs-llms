@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "copycat-vs-llms"
+version = "0.1.0"
+description = "Can a 1980s Copycat fluid-analogy model beat modern LLMs on letter-string analogies they still get wrong?"
+readme = "README.md"
+requires-python = ">=3.9"
+# Core benchmark + Copycat harness are zero-dependency (stdlib only).
+# The LLM runner's provider SDKs are optional extras (see [project.optional-dependencies]).
+dependencies = []
+
+[project.optional-dependencies]
+llm = ["anthropic>=0.40"]
+dev = ["pytest>=8.0"]
+
+[tool.setuptools]
+packages = ["copycat_vs_llms"]
+package-dir = {"" = "src"}

@@ -1,0 +1,19 @@
+# copycat-vs-llms letter-string analogy benchmark (seed set).
+# One JSON object per line. `alphabet` is the ordered list that DEFINES
+# successor/predecessor for that item (default a-z). See src/.../benchmark.py.
+# Classes seed from Lewis & Mitchell (arXiv:2411.14215) counterfactual variants.
+{"id": "std-001", "klass": "standard", "a": "abc", "b": "abd", "c": "ijk", "answers": ["ijl"], "rule_note": "replace last letter with its successor", "source": "Hofstadter & Mitchell 1995"}
+{"id": "std-002", "klass": "standard", "a": "abc", "b": "abd", "c": "pqr", "answers": ["pqs"], "rule_note": "successor of last letter"}
+{"id": "std-003", "klass": "standard", "a": "abc", "b": "abd", "c": "klm", "answers": ["kln"], "rule_note": "successor of last letter"}
+{"id": "perm-001", "klass": "permuted_alphabet", "alphabet": "qwertyuiopasdfghjklzxcvbnm", "a": "qwe", "b": "qwr", "c": "tyu", "answers": ["tyi"], "rule_note": "successor in the permuted alphabet (e->r, u->i)", "source": "Lewis & Mitchell 2024 (variant type)"}
+{"id": "perm-002", "klass": "permuted_alphabet", "alphabet": "qwertyuiopasdfghjklzxcvbnm", "a": "asd", "b": "asf", "c": "ghj", "answers": ["ghk"], "rule_note": "successor in the permuted alphabet (d->f, j->k)"}
+{"id": "nov-001", "klass": "novel_symbol", "alphabet": "αβγδεζηθικλμνξοπρστυφχψω", "a": "αβγ", "b": "αβδ", "c": "ηθι", "answers": ["ηθκ"], "rule_note": "successor in a Greek-letter alphabet (γ->δ, ι->κ)", "source": "Lewis & Mitchell 2024 (symbolic alphabet)"}
+{"id": "nov-002", "klass": "novel_symbol", "alphabet": "0123456789", "a": "012", "b": "013", "c": "567", "answers": ["568"], "rule_note": "successor in a digit alphabet (2->3, 7->8)"}
+{"id": "pred-001", "klass": "predecessor", "a": "abc", "b": "abb", "c": "ijk", "answers": ["ijj"], "rule_note": "replace last letter with its PREDECESSOR (c->b, k->j)"}
+{"id": "pred-002", "klass": "predecessor", "a": "def", "b": "dee", "c": "tuv", "answers": ["tuu"], "rule_note": "predecessor of last letter (f->e, v->u)"}
+{"id": "sec-001", "klass": "second_successor", "a": "abc", "b": "abe", "c": "ijk", "answers": ["ijm"], "rule_note": "replace last letter with its SECOND successor (c->e skips d; k->m skips l)"}
+{"id": "sec-002", "klass": "second_successor", "a": "pqr", "b": "pqt", "c": "lmn", "answers": ["lmp"], "rule_note": "second successor (r->t skips s; n->p skips o)"}
+{"id": "len-001", "klass": "length_generalization", "a": "aabbcc", "b": "aabbdd", "c": "iijjkk", "answers": ["iijjll"], "rule_note": "successor of the last GROUP (cc->dd, kk->ll)"}
+{"id": "len-002", "klass": "length_generalization", "a": "abcd", "b": "abce", "c": "ijklmn", "answers": ["ijklmo"], "rule_note": "successor of last letter on a longer string (d->e, n->o)"}
+{"id": "amb-001", "klass": "ambiguous", "a": "abc", "b": "abd", "c": "xyz", "answers": ["wyz", "xya", "xyd", "dyz"], "rule_note": "z has no successor in a-z; multiple defensible analogies (the classic)", "source": "Hofstadter 1995"}
+{"id": "amb-002", "klass": "ambiguous", "a": "abc", "b": "abd", "c": "mrrjjj", "answers": ["mrrjjk", "mrrkkk"], "rule_note": "successor of last letter vs. successor of last group — both defensible"}

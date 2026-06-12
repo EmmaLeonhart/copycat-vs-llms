@@ -33,3 +33,6 @@ env/
 Thumbs.db
 .env
 .env.local
+
+# Run outputs (regenerated)
+results/
