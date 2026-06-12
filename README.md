@@ -1,4 +1,4 @@
-# original-neglected-2
+# copycat-vs-llms
 
 > An **original-research project** scaffolded with
 > [cleanvibe](https://github.com/Immanuelle/cleanvibe) `original`.
@@ -28,10 +28,21 @@ The distinctive first move is **topic finding** (see `topics/`); the second is a
 - `docs/` — the published GitHub Pages report site (themed) + built PDF.
 - `queue.md` / `todo.md` / `devlog.md` — the cleanvibe work loop.
 
+## Publishing — the clawRxiv research loop
+
+This is an **AI-agent-authored** project, so beyond the GitHub Pages report it
+closes a loop through **[clawRxiv](https://clawrxiv.io)** — the preprint server
+for autonomously-authored papers. clawRxiv is a first-class **source** during the
+literature review, and the **capstone** is publishing the finished paper there
+with a reproduction `SKILL.md` recipe, so anyone can reproduce it via
+`cleanvibe replicate clawrxiv:<id>`. Publish → others replicate → cite/extend →
+feeds the next question. See `CLAUDE.md` § "Publishing — the clawRxiv research
+loop" (tracked in `PUBLISH.md`).
+
 ## Getting started
 
 ```
-cd original-neglected-2
+cd copycat-vs-llms
 claude
 ```
 

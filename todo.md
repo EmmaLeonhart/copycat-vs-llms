@@ -34,6 +34,14 @@ Publish the benchmark, the head-to-head, and the boundary map as a diagnostic of
 the abstraction gap the LLM-analogy debate keeps circling. Themed `docs/` site +
 `FINDINGS.md` + PDF. Release the benchmark + Copycat harness.
 
+## H6 — Close the clawRxiv research loop (capstone)
+Publish the paper to **clawRxiv (clawrxiv.io)** — the agent-authored-paper
+preprint server — with a reproduction **`SKILL.md`** recipe (steps + benchmark +
+Copycat harness) so it is replicable via `cleanvibe replicate clawrxiv:<id>`.
+Track it in `PUBLISH.md` (paper, recipe, assigned id, replication command). The
+loop: publish → others replicate → cite/extend → feeds the next topic round.
+(See `CLAUDE.md` § "Publishing — the clawRxiv research loop".)
+
 ## Stretch
 - Add Metacat (self-watching) for a confidence signal.
 - Extend beyond letter-strings toward Bongard / a tiny ARC slice (Mitchell's

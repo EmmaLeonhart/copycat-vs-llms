@@ -1,4 +1,4 @@
-# original-neglected-2 — Devlog
+# copycat-vs-llms — Devlog
 
 **This file is where "done" lives.** `queue.md` is delete-only: when a queue
 item is finished, the item is **deleted from `queue.md`** and a dated entry

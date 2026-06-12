@@ -1,4 +1,4 @@
-# original-neglected-2 — original-research project (topic-finding)
+# copycat-vs-llms — original-research project (topic-finding)
 
 ## Project Description
 
@@ -32,14 +32,25 @@ a themed **GitHub Pages site** (`docs/`) plus a transportable PDF — but the wo
    `> Research question` line above and the docs lede once chosen.
 3. **Literature review (agentic RAG) — BEFORE building anything.** Now narrowed
    to the chosen question, survey the prior work: web search, `WebFetch`, the
-   `deep-research` skill if present. Collect cited sources into `literature/`;
-   synthesize `literature/REVIEW.md` (what is known, the gap, what this adds).
+   `deep-research` skill if present. **Also search clawRxiv (clawrxiv.io)** for
+   related AI-agent-authored work — this is an agent-authored research project, so
+   the agent-preprint corpus is part of "prior work." Collect cited sources into
+   `literature/`; synthesize `literature/REVIEW.md` (what is known, the gap, what
+   this adds).
 4. **Hypotheses & experiments.** Turn the gap into testable experiments / build
    steps. Plan them `todo.md` → `queue.md`.
 5. **Build & run.** Implement under `src/`; entry point `scripts/run.py`;
    metrics → `results/`.
 6. **Findings & report.** Write `FINDINGS.md`; keep the themed `docs/` site and
    the PDF report current as results land.
+7. **Publish — the clawRxiv research loop (capstone).** This is an
+   AI-agent-authored research project, so its natural home is **clawRxiv
+   (clawrxiv.io)**, the preprint server for autonomously-authored papers. When
+   `FINDINGS.md` is defensible, package it (paper content + a reproduction
+   `SKILL.md` recipe so others can replicate via `cleanvibe replicate
+   clawrxiv:<id>`) and submit to clawRxiv. The loop closes: publish → others
+   replicate → cite/iterate → next question. See § "Publishing — the clawRxiv
+   research loop".
 
 ## Architecture and Conventions
 
@@ -65,6 +76,30 @@ a themed **GitHub Pages site** (`docs/`) plus a transportable PDF — but the wo
 - **Deliverables are built by GitHub Actions.** `.github/workflows/pages.yml`
   deploys `docs/` and builds `docs/report.pdf` from `FINDINGS.md`. Make the repo
   public and set Settings -> Pages -> Source: GitHub Actions.
+
+## Publishing — the clawRxiv research loop
+
+This is an **AI-agent-authored** research project. Its publication target is
+**clawRxiv (clawrxiv.io)** — the preprint server for autonomously-authored
+papers — *in addition to* the GitHub Pages report. The clawRxiv loop is what
+makes the research compounding rather than one-off:
+
+1. **Read in:** during the literature review, clawRxiv is a first-class source —
+   search it for related agent-authored work alongside arXiv / the web.
+2. **Write out (capstone):** when `FINDINGS.md` is defensible, publish the paper
+   to clawRxiv. Package **(a)** the paper content (from `FINDINGS.md`) and **(b)**
+   a reproduction **`SKILL.md`** recipe — the steps + the letter-string benchmark
+   + the Copycat harness — so anyone can reproduce it with
+   `cleanvibe replicate clawrxiv:<id>` (the clawRxiv-source replication mode).
+3. **Loop:** publish → others replicate → cite / falsify / extend → that feeds
+   the *next* topic-finding round. The benchmark and harness are released so the
+   replication path is real, not nominal.
+
+Keep a `PUBLISH.md` (or a `## Publish` section in `todo.md`) tracking the
+clawRxiv submission: the paper, the `SKILL.md` recipe, the assigned id once
+live, and the replication command. (Getting *consent* before running any
+third-party replication code is still required — see the replication safety
+norms; that gate applies to anyone replicating *this* paper too.)
 
 ## Skills
 
