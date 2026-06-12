@@ -9,8 +9,10 @@ explores the area, generates and scores candidate questions, and converges on
 ONE worth pursuing — *then* it proceeds exactly like a `research` project
 (literature review → experiments → published findings).
 
-> **Focus area (seed for topic finding):** a neglected AI area OUTSIDE mainstream LLM and interpretability work
-> **Research question:** _(not yet chosen — the bootstrap queue's topic-finding loop discovers and selects this before the literature review)_
+> **Focus area:** Fluid analogy-making (Hofstadter & Mitchell's *Copycat*, 1980s–90s) — a sidelined classic-AI paradigm, as a probe of modern LLMs.
+> **Research question:** Can a small, classic *Copycat*-style fluid-analogy architecture, on the letter-string micro-domain, solve analogy problems that current LLMs systematically get wrong — and where does each break? Build a tiny letter-string analogy benchmark (including the hard/ambiguous cases), run a re-implemented Copycat-style solver against current LLMs, and map the failure boundary of each: where does symbolic fluid analogy beat scale, and where does it fail?
+
+_(Chosen by the topic-finding loop from an age-explicit slate of 7 ≥10-year-old paradigms — see `topics/TOPICS.md`.)_
 
 Like every cleanvibe research project it produces a published, legible report —
 a themed **GitHub Pages site** (`docs/`) plus a transportable PDF — but the work

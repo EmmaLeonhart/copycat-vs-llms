@@ -3,8 +3,8 @@
 > An **original-research project** scaffolded with
 > [cleanvibe](https://github.com/Immanuelle/cleanvibe) `original`.
 
-**Focus area (seed for topic finding):** a neglected AI area OUTSIDE mainstream LLM and interpretability work
-**Research question:** _(not yet chosen — the bootstrap queue's topic-finding loop discovers and selects this before the literature review)_
+**Focus area:** Fluid analogy-making (Hofstadter & Mitchell's *Copycat*, 1980s–90s) — an old, sidelined paradigm.
+**Research question:** Can a small classic *Copycat*-style fluid-analogy architecture solve letter-string analogy problems that current LLMs systematically get wrong — and where does each break? We build a tiny analogy benchmark, run a Copycat-style solver against current LLMs, and map each one's failure boundary.
 
 ## About
 
